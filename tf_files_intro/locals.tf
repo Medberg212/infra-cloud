@@ -1,3 +1,3 @@
 locals {
-    user = "mberguella"
+  user = "mberguella"
 }
