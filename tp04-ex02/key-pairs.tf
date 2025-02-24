@@ -22,13 +22,13 @@ resource "tls_private_key" "nextcloud" {
   rsa_bits= 4096
 } 
 
-output "private_bastion" {
-  value = tls_private_key.bastion.private_key_openssh
-  sensitive = true
+resource "local_sensitive_file" "private_bastion" {
+  content = tls_private_key.bastion.private_key_openssh
+  filename = "${path.module}/ssh/bastion.pem"
 }
 
-output "private_nextcloud" {
- value = tls_private_key.nextcloud.private_key_openssh
- sensitive = true
+resource "local_sensitive_file" "private_nextcloud" {
+  content = tls_private_key.nextcloud.private_key_openssh
+  filename = "${path.module}/ssh/nextcloud.pem"
 }
 

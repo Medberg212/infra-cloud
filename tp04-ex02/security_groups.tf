@@ -10,7 +10,7 @@ resource "aws_security_group" "allow_ssh_public" {
 
 resource "aws_vpc_security_group_ingress_rule" "allow_ssh_ipv4" {
   security_group_id = aws_security_group.allow_ssh_public.id
-  cidr_ipv4         = "15.237.190.198/32"
+  cidr_ipv4         = "13.38.29.162/32"
   from_port         = 22
   ip_protocol       = "tcp"
   to_port           = 22
