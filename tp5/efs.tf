@@ -1,6 +1,8 @@
 resource "aws_efs_file_system" "fs1" {
 
   creation_token = "fs1"
+  encrypted = true
+  kms_key_id = aws_kms_key.kms_key.arn
 }
 
 resource "aws_efs_mount_target" "mount1" {

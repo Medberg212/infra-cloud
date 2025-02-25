@@ -14,9 +14,17 @@ resource "aws_instance" "bastion" {
 
 }
 
+data "template_file" "init" {
+  template = file("${path.module}/bootstrap.sh")
+  vars = {
+    fs_id = aws_efs_mount_target.mount1.dns_name
+  }
+}
+
 resource "aws_instance" "nextcloud" {
   ami           = "ami-08b1d20c6a69a7100"
   instance_type = "t3.micro"
+  user_data              = data.template_file.init.rendered
 
   network_interface {
     network_interface_id = aws_network_interface.nextcloud_new.id
