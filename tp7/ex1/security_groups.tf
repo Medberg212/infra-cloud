@@ -18,7 +18,7 @@ resource "aws_vpc_security_group_ingress_rule" "allow_ssh_ipv4" {
 
 resource "aws_vpc_security_group_ingress_rule" "allow_internet_bastion" {
   security_group_id = aws_security_group.allow_ssh_public.id
-  cidr_ipv4         = "0.0.0.0/0"
+  cidr_ipv4         = "196.75.195.84/32"
   from_port         = 80
   ip_protocol       = "tcp"
   to_port           = 80
