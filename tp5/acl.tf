@@ -18,7 +18,7 @@ resource "aws_network_acl" "main" {
     from_port  = 0
     to_port    = 0
   }
-  
+
   egress {
     protocol   = -1
     rule_no    = 100

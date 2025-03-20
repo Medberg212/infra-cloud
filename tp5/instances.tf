@@ -24,7 +24,7 @@ data "template_file" "init" {
 resource "aws_instance" "nextcloud" {
   ami           = "ami-08b1d20c6a69a7100"
   instance_type = "t3.micro"
-  user_data              = data.template_file.init.rendered
+  user_data     = data.template_file.init.rendered
 
   network_interface {
     network_interface_id = aws_network_interface.nextcloud_new.id

@@ -6,7 +6,7 @@ resource "aws_route_table" "private_1a" {
     gateway_id = "local"
   }
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.nat_gw.id
   }
 
@@ -25,7 +25,7 @@ resource "aws_route_table" "private_1b" {
     gateway_id = "local"
   }
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.nat_gw.id
   }
 
@@ -44,7 +44,7 @@ resource "aws_route_table" "private_1c" {
     gateway_id = "local"
   }
   route {
-    cidr_block = "0.0.0.0/0"
+    cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.nat_gw.id
   }
 
